@@ -1,0 +1,12 @@
+body, html{
+  background-color: #F1F1F1;
+}
+
+#description, #keywords{
+  max-width: 300px;
+}
+
+.Data input{
+  border-bottom: 1px solid black;
+  border-right: 2px solid black;
+}

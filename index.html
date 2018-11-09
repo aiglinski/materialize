@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>Materialize faux warehouse database</title>
+     <meta name="description" content="DESCRIPTION">
+    <link rel="stylesheet" href="style.css">
+
+     <!--[if lt IE 9]>
+       <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+ </head>
+
+ <body>
+<h1 class="mainTitle">Faux Shipping Co.</h1>
+<h2 class="subTitle">An inventory application with a functional backend and barcode recoginition</h2>
+
+<div class="wrapper">
+  <fieldset>
+  <legend>Product Info</legend>
+  <form action="/action.php" class="Data" id="Data">
+
+    ISBN:
+    <input type="number" name="Barcode">
+    <br>
+
+    Product Name:
+    <input type="text" name="productName">
+    <br>
+
+    Price:
+    <input type="number" name="Price" min="0.01">
+    <br>
+
+    Product Description:
+    <input id="description" type="text" name="description" size="200">
+    <br>
+
+    Keywords:
+    <input id="keywords" type="text" name="keywords" size="200">
+    <br>
+
+    Quantity:
+    <input type="number" name="quantity" value="1" min="1" max="20">
+    <br>
+
+    <input type="radio" name="Inventory" value="Sale">Sale
+    <br>
+    <input type="radio" name="Inventory" value="Receiving">Receiving
+    <br>
+    <br>
+    <input type="submit" value="submit">
+
+  </form>
+  </fieldset>
+</div>
+
+
+
+
+
+
+<script src="main.js" charset="utf-8"></script>
+ </body>
+
+ </html>
