@@ -6,6 +6,7 @@
      <title>Materialize faux warehouse database</title>
      <meta name="description" content="DESCRIPTION">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="main.js"></script>
 
      <!--[if lt IE 9]>
        <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,64 +20,64 @@
 <div class="wrapper">
   <fieldset>
   <legend>Product Info</legend>
-  <form action="/action.php" class="Data" id="Data">
+  <form class="Data" id="Data">
 
     ISBN:
     <br>
-    <input type="number" name="Barcode" required="required">
+    <input type="number" name="Barcode" required="required" size="13">
     <br>
 
     Product Name:
     <br>
-    <input type="text" name="productName" required="required">
+    <input id="Name" type="text" name="ProductName" required>
     <br>
 
     Price:
     <br>
-    <input id="price" type="number" name="Price" min="0.01" step=".01" required="required" onwheel="wheelScroll()">
+    <input id="Price" type="number" name="Price" min="0.01" step=".01" required>
     <br>
 
     Product Description:
     <br>
-    <input id="description" type="text" name="description">
+    <input id="Description" type="text" name="Description">
     <br>
 
     Keywords:
     <br>
-    <input id="keywords" type="text" name="keywords">
+    <input id="Keywords" type="text" name="Keywords">
     <br>
 
     Quantity:
     <br>
-    <input type="number" name="quantity" value="1" min="1" max="20" step="1" required="required">
+    <input id="Quantity" type="number" name="Quantity" value="1" min="1" max="20" step="1" required>
     <br>
     <br>
 
-    <input type="radio" name="Inventory" value="Sale">Sale
+    <input id="Sale" class="InOut" type="radio" name="InOut" value="Sale" checked>Sale
     <br>
-    <input type="radio" name="Inventory" value="Receiving">Receiving
+    <input id="Received" class="InOut" type="radio" name="InOut" value="Receiving">Receiving
     <br>
     <br>
-    <input id="submit" type="submit" value="submit">
-    <input type="button" id="testButton" value="Test" onclick="init()">
+    <!-- <input type="button" id="Receiving" class="button" value="Receiving">
+
+    <input onclick="Sale()" type="button" id="Sale" class="button" value="Sale"> -->
+<br>
+
+    <input type="submit" id="SubmitButton" class="button" value="Submit" >
   </form>
   </fieldset>
 </div>
 
 
 
-
-
 <script>
-function init(){
-  var value = document.forms["Data"]["Price"].value;
-  var test = document.getElementById("testButton");
-  console.log(value);
-}
-
-
+document.addEventListener('click', function (event) {
+if (!event.target.matches('.button')) return;
+event.preventDefault();
+document.getElementById('SubmitButton').onclick = submit();
+}, false);
 </script>
-<script src="main.js" charset="utf-8"></script>
+
  </body>
 
  </html>
