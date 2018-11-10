@@ -12,7 +12,8 @@
     var Quantity = document.forms["Data"]["Quantity"].value
     var InventorySale = document.getElementById("Sale");
     var InventoryReceived = document.getElementById("Received");
-    var InventoryCurrent = 10
+    var InventoryCurrent = 10;
+    var TotalInventory
 
 
     // var test = document.getElementById('testButton');
@@ -22,18 +23,21 @@
     console.log("Description = " + Description);
     console.log("Keywords = " + Keywords);
     console.log("Quantity = " + Quantity);
+
     // console.log("InventoryCurrent = " + Inventory);
     if (InventorySale.checked){
-      console.log("Inventory Sale")
+      TotalInventory = InventoryCurrent - Quantity
     }
     else if (InventoryReceived.checked){
-      console.log("Inventory Received")
+      TotalInventory = InventoryCurrent + Quantity
     }
     else {
       console.log("Please select Sales or Receiving")
     };
-    console.log("Total Inventory = " + InventoryCurrent);
+    console.log(TotalInventory);
+
 };
+
 
   // document.getElementById("Receiving").onclick = function Receiving(){
   //
